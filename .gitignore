@@ -1,0 +1,28 @@
+# Binary outputs
+todo-app
+*.exe
+*.out
+
+# Build/test caches
+bin/
+cmd/build/
+coverage.*
+*.test
+
+# Vendor / modules
+vendor/
+go.sum.lock
+
+# IDE/editor detritus
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# OS metadata
+Thumbs.db
+
+# Auto-generated DB artifacts
+db/sqlc/
+db/sqlite.db
