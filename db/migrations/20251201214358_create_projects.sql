@@ -1,6 +1,6 @@
 -- +goose Up
 -- +goose StatementBegin
-create TABLE projects (
+CREATE TABLE projects (
 projectId INTEGER PRIMARY KEY,
 name text NOT NULL
 );

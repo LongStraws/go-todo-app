@@ -9,6 +9,21 @@ import (
 	"context"
 )
 
+const createProject = `-- name: CreateProject :one
+INSERT INTO projects (
+name
+) values(
+?
+) RETURNING projectid, name
+`
+
+func (q *Queries) CreateProject(ctx context.Context, name string) (Project, error) {
+	row := q.db.QueryRowContext(ctx, createProject, name)
+	var i Project
+	err := row.Scan(&i.Projectid, &i.Name)
+	return i, err
+}
+
 const listProjects = `-- name: ListProjects :many
 SELECT projectid, name FROM projects
 `
